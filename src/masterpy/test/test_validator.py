@@ -18,4 +18,4 @@ class Colors(Enum):
 ])
 def test_validate(solution, combination, expected_result):
     validator = Validator()
-    assert validator.validate(solution, combination).black == 2
+    assert validator.validate(solution, combination).black == expected_result.black

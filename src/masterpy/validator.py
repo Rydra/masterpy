@@ -1,3 +1,4 @@
+import itertools
 class Result:
     def __init__(self, black, white):
         self.black = black
@@ -5,8 +6,6 @@ class Result:
 
 class Validator():
     def validate(self, solution, combination):
-        black = 0
-        for (slot1, slot2) in zip(solution, combination):
-            black += 1 if slot1 == slot2 else 0
+        black = len(list(filter(lambda xy: xy[0] == xy[1], zip(solution, combination))))
 
         return Result(black, 0)
